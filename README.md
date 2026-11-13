@@ -14,6 +14,9 @@
 
 ---
 
+| Course Website – Data Mining | [Course Materials](https://nghianguyen7171.github.io/Data_mining/) |
+
+
 ## 1. Project Overview
 
 Healthcare systems frequently face resource constraints that limit the number of individuals who can receive follow-up screening. Under these conditions, traditional classification metrics such as accuracy and ROC-AUC may not fully reflect the practical objective of identifying the highest-risk individuals within a limited screening capacity.
