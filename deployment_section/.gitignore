@@ -1,0 +1,23 @@
+# Python / runtime
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+*.log
+
+# Streamlit secrets and local env files
+.streamlit/
+.env
+.env.*
+
+# Local research outputs and retraining artifacts
+development/data/
+development/retraining_runs/
+development/model_registry/
+development/model_registry/candidates/
+development/deployment_bundle.__staging__/
+development/deployment_bundle.__old__/
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
