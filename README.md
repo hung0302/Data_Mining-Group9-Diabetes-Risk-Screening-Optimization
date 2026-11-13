@@ -14,8 +14,6 @@
 
 ---
 
-| Course Website – Data Mining | [Course Materials](https://nghianguyen7171.github.io/Data_mining/) |
-
 
 ## 1. Project Overview
 
@@ -583,6 +581,8 @@ The application is designed for research and educational demonstrations. Real pa
 | Deployment documentation | [Deployment README](deployment_section/README.md) |
 | Retraining pipeline | [Retraining Source](deployment_section/development/retrain_pipeline.py) |
 | Temporal evaluation | [Retraining Report](deployment_section/development/report.md) |
+| Course Website – Data Mining | [Course Materials](https://nghianguyen7171.github.io/Data_mining/) |
+
 
 ### External Documentation
 
