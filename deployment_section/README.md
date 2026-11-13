@@ -109,7 +109,8 @@ To reproduce the research experiment, the following external data are required:
 - a newer BRFSS data export with labels consistent with the same feature coding;
 - local access to the project files in `deployment_section/development/` and the production bundle in `deployment_section/app/deployment_bundle/`.
 
-This repository does not ship the raw BRFSS historical datasets or the newer external cohort. These files must be downloaded separately according to the project data access policy and placed in the local `development/data/` folder before running the retraining workflow.
+The BRFSS 2015 file is included at the repository root (`diabetes_binary_health_indicators_BRFSS2015.csv`). The newer BRFSS 2025 cohort is not included; download it from the CDC and recode it with `development/Retrain_BRFSS2025_Group9.ipynb`. To run the pipeline from `development/`, point it to the root file:
+`python retrain_pipeline.py --historical ../../diabetes_binary_health_indicators_BRFSS2015.csv --new-data <recoded_2025.csv> --ignore-schedule`
 
 The general processing workflow is:
 

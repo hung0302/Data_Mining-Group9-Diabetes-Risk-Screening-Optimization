@@ -21,7 +21,6 @@
     "Lift@K"
   ],
   "data_requirements": {
-    "_status": "PROPOSED defaults by the retraining pipeline — confirm thresholds with Hưng before quoting them in the report",
     "min_new_labeled_rows": 500,
     "min_new_positive_outcomes": 50,
     "min_new_negative_outcomes": 50
@@ -38,7 +37,6 @@
     "recalibrate": false
   },
   "promotion_criteria": {
-    "_status": "PROPOSED defaults — confirm with Hưng",
     "primary_evaluation_set": "new-data holdout when it has enough outcomes, otherwise the locked test",
     "min_primary_improvement": 0.0,
     "max_locked_test_pr_auc_drop": 0.005,

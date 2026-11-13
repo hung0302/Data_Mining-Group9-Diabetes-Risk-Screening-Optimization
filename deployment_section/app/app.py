@@ -210,7 +210,7 @@ st.title("Diabetes Risk Screening")
 st.caption("Data Mining · Group 9 · 2015 BRFSS dataset · Research demonstration")
 st.info(
     "This research tool generates a **model-estimated risk score** for the survey's "
-    "diabetes/prediabetes category, to help illustrate limited-capacity screening. "
+    "self-reported diabetes category, to help illustrate limited-capacity screening. "
     "The score is **not a clinically validated probability of having diabetes**, "
     "and this app does not diagnose disease or replace clinical assessment."
 )
@@ -342,7 +342,7 @@ if screening_mode == "Single patient":
         st.subheader("1 · What does your result mean?")
         st.metric("Model-estimated risk score", f"{result['probability']:.2%}")
         st.write(
-            "This is the model's **score for the survey diabetes/prediabetes class**, "
+            "This is the model's **score for the survey's self-reported diabetes class**, "
             "shown on a 0–100% scale. It is mainly useful for **comparing/ranking "
             "screening priority across people**. It is **not** a clinically validated "
             "percentage chance that you have diabetes or will develop it."
@@ -599,7 +599,7 @@ with st.expander("Research notes & model information"):
     st.markdown(
         """
         - **Target:** `Diabetes_binary` in the group's BRFSS 2015 dataset;
-          the positive class combines survey diabetes/prediabetes status.
+          the positive class is self-reported diabetes (prediabetes is coded 0).
         - **Priority tiers (demo only):** Very high = estimated top 2.5%;
           High = top 10%; Moderate = top 20%; Standard = outside top 20%.
         - **Capacity selection:** the single-person form does not require K%.

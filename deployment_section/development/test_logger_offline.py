@@ -5,6 +5,8 @@ import sys
 import types
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "app"))  # logger.py lives in app/
+
 st = types.ModuleType('streamlit')
 st.secrets = {'apps_script_url': 'https://script.google.com/macros/s/DEMO/exec',
               'logging_token': '12345678901234567890123456789012'}
