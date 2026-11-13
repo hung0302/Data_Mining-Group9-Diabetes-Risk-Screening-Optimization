@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the final submission for the Group 9 Data Mining project on diabetes screening risk prediction. The deployed application is a Streamlit-based prototype that uses the production global XGBoost model, version 1.0.0, to estimate screening priority from BRFSS-style survey responses. The repository also includes a separate development workflow for offline retraining and experimental validation with a candidate model version 1.1.0 built from later BRFSS data.
+This repository contains the final submission for the Group 9 Data Mining project on diabetes screening risk prediction. The deployed application is a Streamlit-based prototype that uses the production global XGBoost model, version 1.0.0, to estimate screening priority from BRFSS-style survey responses. The repository also includes a separate development workflow for offline retraining and experimental validation: the completed retraining experiment used BRFSS 2025 and produced a research candidate model version 1.1.0.
 
 The currently deployed model remains the production artifact under the app bundle and is not replaced by the retraining candidate. The candidate model is preserved only for research evaluation and comparison; it is not promoted to runtime without an explicit manual deployment decision.
 
@@ -93,26 +93,26 @@ These checks validate the production bundle checksum, single-patient prediction 
 
 ## Retraining pipeline organization
 
-The experimental retraining pipeline lives in `deployment_section/development/retrain_pipeline.py`. It reads the production bundle from `deployment_section/app/deployment_bundle` and writes local retraining artifacts under `deployment_section/development/` such as:
+The completed BRFSS 2025 experiment is distinct from the pipeline's possible future use with newly collected, labeled data. Google Sheets logging is currently for simulated demo data only, not a source of real patient records, and Streamlit predictions do not automatically feed training. The experimental retraining pipeline lives in `deployment_section/development/retrain_pipeline.py`. It reads the production bundle from `deployment_section/app/deployment_bundle` and writes local retraining artifacts under `deployment_section/development/` such as:
 
 - `data/` for the historical BRFSS dataset and any local new-record exports;
 - `retraining_runs/` for candidate reports and evaluation summaries;
 - `model_registry/` for staged or archived model outputs.
 
-This separation ensures the deployed app and the research pipeline remain distinct. The script validates schema, evaluates candidate changes, and enforces promotion criteria, but it does not automatically replace the production model unless the user explicitly runs a promotion step.
+This separation ensures the deployed app and the research pipeline remain distinct. A future run must be explicitly started with separately supplied labeled data. The script validates schema, evaluates candidate changes, and enforces promotion criteria, but it does not automatically replace the production model unless the user explicitly runs a promotion step.
 
 ## Reproducing the retraining experiment
 
-To reproduce the research experiment, the following external data are required:
+The research experiment has already been performed with BRFSS 2025. To reproduce it, the following data are required locally:
 
 - BRFSS 2015 historical training data in the same 21-feature schema used by the app;
 - a newer BRFSS data export with labels consistent with the same feature coding;
 - local access to the project files in `deployment_section/development/` and the production bundle in `deployment_section/app/deployment_bundle/`.
 
-The BRFSS 2015 file is included at the repository root (`diabetes_binary_health_indicators_BRFSS2015.csv`). The newer BRFSS 2025 cohort is not included; download it from the CDC and recode it with `development/Retrain_BRFSS2025_Group9.ipynb`. To run the pipeline from `development/`, point it to the root file:
+The BRFSS 2015 file is included at the repository root (`diabetes_binary_health_indicators_BRFSS2015.csv`); it need not be copied into `development/data/`. The BRFSS 2025 cohort used in the experiment is not included; download and recode the data with `development/Retrain_BRFSS2025_Group9.ipynb`. From `deployment_section/development/`, pass the root historical file using `--historical`:
 `python retrain_pipeline.py --historical ../../diabetes_binary_health_indicators_BRFSS2015.csv --new-data <recoded_2025.csv> --ignore-schedule`
 
-The general processing workflow is:
+The future retraining workflow (separate from that completed experiment) is:
 
 1. Prepare a local historical dataset and any new labeled cohort data.
 2. Run the retraining script from the development folder.

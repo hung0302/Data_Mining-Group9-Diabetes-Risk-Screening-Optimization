@@ -2,7 +2,7 @@
 
 Hướng dẫn này thay hoàn toàn phương án Google Cloud Service Account trước đó.
 **Không cần Google Cloud Console, billing, credit card, service account hay file JSON key.**
-Chỉ dùng dữ liệu **giả lập** cho demo; không nhập thông tin bệnh nhân thật.
+Google Sheets trong hướng dẫn này chỉ phục vụ **demo với dữ liệu giả lập**, không phải nguồn dữ liệu bệnh nhân thực tế. Không nhập thông tin bệnh nhân thật hoặc coi các bản ghi demo là kết quả từ người dùng thực.
 
 ## 1. Tạo Sheet (Google Sheets cá nhân)
 
@@ -60,5 +60,5 @@ Chỉ dùng dữ liệu **giả lập** cho demo; không nhập thông tin bện
 ## 5. Giới hạn
 
 - Apps Script có hạn mức sử dụng miễn phí phù hợp với demo nhỏ; đạt hạn mức thì sẽ bị từ chối/chậm, không tự phát sinh phí.
-- Chưa gồm outcome update và retraining pipeline. Đây là công việc tiếp theo, không phải điều kiện để logging chạy.
+- Chưa gồm outcome update và retraining pipeline. Đây là công việc tiếp theo, không phải điều kiện để logging chạy. Việc ghi log không làm Streamlit tự học; bất kỳ retraining nào trong tương lai phải được chạy riêng trên dữ liệu mới đã gán nhãn và được kiểm duyệt.
 - Ghi log bằng token không phải cơ chế bảo mật phù hợp với dữ liệu sức khỏe thật.
