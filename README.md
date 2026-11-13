@@ -14,6 +14,12 @@
 
 ---
 
+### 🔗 Quick Access
+
+- **[🚀 Try the Live Streamlit App](https://group9-diabetes-screening-hungthuyvanhkhanh.streamlit.app/)**
+- **[📄 Read the Final Report](Group%209%20%2B%20Optimizing%20Diabetes%20Risk%20Screening%20for%20Capacity-Constrained%20Healthcare%20Systems%20Using%20Boosting%20Models.pdf)**
+- **[💻 Explore the Research Notebook](Data_Mining_Group_9_Report_Development_Process.ipynb)**
+
 
 ## 1. Project Overview
 
@@ -582,6 +588,8 @@ The application is designed for research and educational demonstrations. Real pa
 | Retraining pipeline | [Retraining Source](deployment_section/development/retrain_pipeline.py) |
 | Temporal evaluation | [Retraining Report](deployment_section/development/report.md) |
 | Course Website – Data Mining | [Course Materials](https://nghianguyen7171.github.io/Data_mining/) |
+| Live Streamlit Application | [Launch Diabetes Screening App](https://group9-diabetes-screening-hungthuyvanhkhanh.streamlit.app/) |
+
 
 
 ### External Documentation
