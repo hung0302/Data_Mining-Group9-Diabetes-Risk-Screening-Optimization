@@ -32,8 +32,8 @@ Google Sheets trong hướng dẫn này chỉ phục vụ **demo với dữ li�
 
 ## 3. Cấu hình Streamlit trên máy
 
-1. Trong `deployment_section/app/.streamlit/` copy `secrets.example.toml` rồi đổi tên bản copy thành `secrets.toml`.
-2. Sửa hai giá trị sau (ví dụ):
+1. Trong `deployment_section/app/.streamlit/`, tạo mới file `secrets.toml`.
+2. Thêm hai dòng sau và thay giá trị ví dụ bằng URL Apps Script `/exec` cùng token đã tạo:
 
    `apps_script_url = "https://script.google.com/macros/s/YOUR_ID/exec"`
    `logging_token = "YOUR_LONG_RANDOM_TOKEN"`
@@ -44,7 +44,7 @@ Google Sheets trong hướng dẫn này chỉ phục vụ **demo với dữ li�
 4. Trong Terminal VS Code (đang đứng ở thư mục deployment_section/app):
 
    `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`
-   `.\.venv\Scripts\python.exe test_logger_offline.py`
+   `.\.venv\Scripts\python.exe ..\development\test_logger_offline.py`
    `.\.venv\Scripts\python.exe -m streamlit run app.py`
 
 5. Bấm Predict với dữ liệu mẫu: phải hiển thị 1.03%, có `prediction_id`, Google Sheet có dòng mới (34 cột); probability lưu = `0.010257108...` (KHÔNG phải `1.03`).
