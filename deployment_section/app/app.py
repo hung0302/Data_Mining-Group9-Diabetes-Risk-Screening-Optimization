@@ -613,13 +613,13 @@ with st.expander("Research notes & model information"):
         - **Calibration:** the locked-test Brier evaluation and calibration curve
           show imperfect probability calibration; the score is mainly for
           *ranking and top-K screening*, not validated clinical probability.
-        - **Study scope:** trained on BRFSS 2015; the team plans to examine
-          available newer data (including 2024) in future checks, not a completed
-          validation shown here. The reason for choosing 2015 must be explained
-          and verified in the written report.
-        - **Continuous learning:** collecting outcomes and conditionally
-          retraining/evaluating a candidate model are proposed next steps;
-          retraining is NOT running automatically inside this app.
+        - ***Study scope:*** trained on BRFSS 2015. An offline temporal check on
+          the later BRFSS 2025 cohort is reported in Section 5.4 of the report;
+          the model deployed here is still v1.0.0.
+        - ***Continuous learning:*** an offline retraining pipeline (data validation,
+          candidate retraining, comparison with the deployed model, manual approval)
+          was tested with BRFSS 2025. Retraining does NOT run inside this app, and
+          collecting verified outcomes from app users remains a proposed extension.
         - **Clinical safety:** this app does not replace testing or a clinician.
         """
     )
